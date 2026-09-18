@@ -1,18 +1,44 @@
 # Athena
 
-Indexador recursivo de resumos de projeto para uso como contexto de IA.
-A Athena resume cada arquivo do seu repositório usando o
-[Claude Code](https://claude.com/claude-code), de baixo para cima —
-primeiro cada arquivo, depois cada pasta a partir dos resumos dos seus
-filhos — até chegar num resumo da raiz do projeto. O objetivo é dar a
-uma IA (ou a você) uma visão da arquitetura sem precisar reabrir
-arquivo por arquivo toda vez.
+![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)
+![Stdlib only](https://img.shields.io/badge/dependencies-stdlib--only-brightgreen.svg)
+
+**Dá a uma IA (ou a você) uma visão de todo o projeto sem precisar
+reabrir arquivo por arquivo toda vez.**
+
+Você já entrou num projeto sem documentação, sem arquitetura mapeada,
+onde ninguém sabe mais o que cada pasta faz? A Athena resolve
+exatamente isso: percorre o repositório recursivamente e pede ao
+[Claude Code](https://claude.com/claude-code) um resumo de cada
+arquivo — de baixo para cima, primeiro cada arquivo, depois cada
+pasta a partir dos resumos dos seus filhos — até chegar num resumo da
+raiz do projeto. O resultado é uma "planta baixa" do código, gerada
+automaticamente, que tanto você quanto uma IA podem consultar em vez
+de reler tudo do zero a cada pergunta.
 
 Reimplementação de uma ferramenta que já usei profissionalmente (mesmo
 nome, mesma ideia): num projeto sem documentação, sem arquitetura
 mapeada e com pacotes privados que ninguém conseguia ler, gerar esses
 resumos recursivos foi o que resolveu o retrabalho e os bugs em lugares
 não mapeados.
+
+## Por que usar
+
+- **Você entende um projeto grande sem ler tudo.** Útil pra quem está
+  começando e caiu de paraquedas num codebase de anos — e útil pra
+  quem já é sênior e só quer relembrar rápido "o que faz essa pasta".
+- **A IA para de "esquecer" o projeto a cada pergunta.** Sem um
+  índice, toda conversa com o Claude começa do zero, reabrindo
+  arquivos. Com a Athena, o contexto de arquitetura já existe em
+  disco.
+- **Cache incremental de verdade.** Rodar de novo só re-resume o que
+  mudou — não reprocessa o projeto inteiro a cada execução.
+- **Parte de uma suíte**: o [thero](https://github.com/netovieira/thero)
+  configura o Claude Code pra já consultar os resumos da Athena
+  automaticamente, e o [Zeus](https://github.com/netovieira/zeus) usa
+  esses resumos pra planejar uma tarefa antes de você pedir pro Claude
+  executar. Cada um funciona sozinho também.
 
 ## Descrição
 
@@ -166,7 +192,6 @@ athena/
 **Anthero Vieira Neto**
 
 - E-mail: antherovn@gmail.com
-- WhatsApp Business: +55 17 9210-1133
 - LinkedIn: https://www.linkedin.com/in/anthero-vieira-neto-aa7a6b8a
 - GitHub: http://github.com/netovieira
 
