@@ -125,10 +125,11 @@ Code) pode rodar `athena index .` automaticamente como um passo
 opcional (`thero --index`), se a Athena estiver instalada. Veja o
 README do `thero` para detalhes.
 
-Está planejado um segundo par desta ferramenta, o **Zeus**: um
-planejador que cruza o pedido do usuário com o índice gerado pela
-Athena para decidir quais arquivos reais precisam ser lidos/editados
-antes de uma tarefa. Ainda não foi implementado.
+Existe um segundo par desta ferramenta, o [`zeus`](https://github.com/netovieira/zeus):
+um planejador que cruza o pedido do usuário com o índice gerado pela
+Athena (via `claude -p`) para decidir quais arquivos reais precisam
+ser lidos/editados antes de uma tarefa, escrevendo o resultado em
+`.claude/zeus-plan.md`.
 
 ## Limitações conhecidas
 
