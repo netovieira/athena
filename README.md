@@ -168,3 +168,7 @@ athena/
 - WhatsApp Business: +55 17 9210-1133
 - LinkedIn: https://www.linkedin.com/in/anthero-vieira-neto-aa7a6b8a
 - GitHub: http://github.com/netovieira
+
+## Licença
+
+[MIT](./LICENSE)
