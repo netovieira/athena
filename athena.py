@@ -5,6 +5,11 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
+# Garante que a saída fique na ordem certa mesmo quando redirecionada
+# (pipe/arquivo), inclusive quando invocada como subprocesso por
+# ferramentas como o thero.
+sys.stdout.reconfigure(line_buffering=True)
+
 _ENTRY_PATH = Path(__file__).resolve()
 _SRC_DIR = _ENTRY_PATH.parent / "src"
 
