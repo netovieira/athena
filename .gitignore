@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Saída da própria Athena quando rodada dentro deste repo em testes
+.athena/
+
+# Editor / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
